@@ -13,8 +13,8 @@ class Maybe(Base):
 
     def map(self, f):
         if self.is_none():
-            return Maybe(None)
-        return Maybe(f(self.value))
+            return __class__(None)
+        return __class__(f(self.value))
 
     def get(self, default_value=None):
         if self.is_none():

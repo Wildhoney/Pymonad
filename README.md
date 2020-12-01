@@ -8,10 +8,10 @@
 from pymonad import Maybe
 
 # util functions defined out of scope.
-lower = lambda x: x.lower()
-reverse = lambda x: x[::-1]
-shout = lambda x: '%s!' % x
-capitalise = lambda x: x.capitalize()
+def lower(x): return x.lower()
+def reverse(x): return x[::-1]
+def shout(x): return '%s!' % x
+def capitalise(x): return x.capitalize()
 
 # using operator overloads
 a = Maybe('Adam')

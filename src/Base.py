@@ -1,5 +1,4 @@
 class Base:
-
     def __rshift__(self, value):
         return self.map(value)
 
