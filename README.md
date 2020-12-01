@@ -5,7 +5,7 @@
 ## Getting Started
 
 ```python
-from pymonad import Maybe
+from pymonad import Just, Nothing
 
 # util functions defined out of scope.
 def lower(x): return x.lower()

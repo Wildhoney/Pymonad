@@ -26,14 +26,15 @@ class TestJust(unittest.TestCase):
     def test_map(self):
         c = a.map(lower).map(reverse).map(shout).map(capitalise)
         self.assertEqual(str(c), "Just (Mada!)")
-        d = a.map(lower).map(lambda x: Just(reverse(x))).map(shout).map(capitalise)
+        d = a.map(lower).map(lambda x: Just(
+            reverse(x))).map(shout).map(capitalise)
         self.assertEqual(str(d), "Just (Mada!)")
 
         e = b.map(lower).map(reverse).map(shout).map(capitalise)
         self.assertEqual(str(e), "Nothing")
-        f = b.map(lower).map(lambda x: Just(reverse(x))).map(shout).map(capitalise)
+        f = b.map(lower).map(lambda x: Just(
+            reverse(x))).map(shout).map(capitalise)
         self.assertEqual(str(f), "Nothing")
-
 
     def test_map_shorthand(self):
         c = a >> lower >> reverse >> shout >> capitalise
@@ -52,4 +53,3 @@ class TestJust(unittest.TestCase):
         self.assertEqual(c | "Unknown", "Mada!")
         d = b >> lower >> reverse >> shout >> capitalise
         self.assertEqual(d | "Unknown", "Unknown")
-
