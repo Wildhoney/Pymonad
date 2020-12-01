@@ -14,20 +14,20 @@ def shout(x): return '%s!' % x
 def capitalise(x): return x.capitalize()
 
 # using operator overloads
-a = Maybe('Adam')
+a = Just('Adam')
 b = a >> lower >> reverse >> shout >> capitalise
 print(b | "n/a") # print "Mada!" otherwise "n/a" if Nothing.
 
 # using explicit method names
-x = Maybe(None)
+x = Nothing()
 y = x.map(lower).map(reverse).map(shout).map(capitalise)
 print(y.get()) # defaults to None if not explictly specified.
 
 # determine if Just or Nothing
 a.is_just() # True
-x.is_none() # True
+x.is_nothing() # True
 
 # stringify the instance
-print(Maybe('Imogen')) # Just (Imogen)
-print(Maybe(None)) # Nothing
+print(Just('Imogen')) # Just (Imogen)
+print(Nothing()) # Nothing
 ```
