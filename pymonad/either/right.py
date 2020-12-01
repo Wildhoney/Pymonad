@@ -13,3 +13,13 @@ class Right(Either):
 
     def __str__(self):
         return 'Right (%s)' % self.value
+
+    def __eq__(self, other):
+        if (other.ok):
+            return Right(self.value == other.value)
+        return Left(self.value)
+
+    def __ne__(self, other):
+        if (other.ok):
+            return Right(self.value != other.value)
+        return Left(self.value)

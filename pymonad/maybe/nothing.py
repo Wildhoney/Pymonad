@@ -9,3 +9,9 @@ class Nothing(Maybe):
 
     def __str__(self):
         return 'Nothing'
+
+    def __eq__(self, other):
+        return Nothing()
+
+    def __ne__(self, other):
+        return Nothing()

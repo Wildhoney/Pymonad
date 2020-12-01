@@ -13,3 +13,13 @@ class Just(Maybe):
 
     def __str__(self):
         return 'Just (%s)' % self.value
+
+    def __eq__(self, other):
+        if (other.ok):
+            return Just(self.value == other.value)
+        return Nothing()
+
+    def __ne__(self, other):
+        if (other.ok):
+            return Just(self.value != other.value)
+        return Nothing()
