@@ -29,12 +29,15 @@ class TestEither(unittest.TestCase):
         d = a.map(lower).map(lambda x: Right(
             reverse(x))).map(shout).map(capitalise)
         self.assertEqual(str(d), "Right (Mada!)")
-
-        e = b.map(lower).map(reverse).map(shout).map(capitalise)
+        e = a.map(lower).map(lambda x: Left(
+            "Name cannot be retrieved")).map(shout).map(capitalise)
         self.assertEqual(str(e), "Left (Name cannot be retrieved)")
-        f = b.map(lower).map(lambda x: Just(
-            reverse(x))).map(shout).map(capitalise)
+
+        f = b.map(lower).map(reverse).map(shout).map(capitalise)
         self.assertEqual(str(f), "Left (Name cannot be retrieved)")
+        g = b.map(lower).map(lambda x: Right(
+            reverse(x))).map(shout).map(capitalise)
+        self.assertEqual(str(g), "Left (Name cannot be retrieved)")
 
     def test_map_shorthand(self):
         c = a >> lower >> reverse >> shout >> capitalise
