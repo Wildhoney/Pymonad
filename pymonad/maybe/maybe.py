@@ -1,4 +1,4 @@
-from ..functor.functor import Functor
+from pymonad.functor import Functor
 
 
 class Maybe(Functor):

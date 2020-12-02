@@ -1,4 +1,4 @@
-from .either import Either
+from . import Either
 
 
 class Left(Either):

@@ -1,6 +1,5 @@
 import unittest
-from .just import Just
-from .nothing import Nothing
+from . import Nothing, Just
 
 
 a = Just('Adam')

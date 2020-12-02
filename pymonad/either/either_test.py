@@ -1,6 +1,5 @@
 import unittest
-from .right import Right
-from .left import Left
+from . import Left, Right
 
 
 a = Right('Adam')

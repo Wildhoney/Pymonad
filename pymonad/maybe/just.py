@@ -1,5 +1,4 @@
-from .maybe import Maybe
-from .nothing import Nothing
+from . import Maybe, Nothing
 
 
 class Just(Maybe):
